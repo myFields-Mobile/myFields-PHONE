@@ -1,0 +1,17 @@
+<ion-view view-title="Inspections">
+  <ion-content>
+    <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="doRefresh()">
+    </ion-refresher>
+    <div class="text-center" style="margin-top:15px;" ng-show="inspections.length == 0">
+      No assigned inspections found.
+    </div>
+    <ion-list>
+      <ion-item ng-repeat="inspection in inspections" href="#/app/inspections/{{inspection.id}}">
+        <h2>{{inspection.Field.name}}</h2>
+        <p>{{inspection.updatedAt | date: 'medium'}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

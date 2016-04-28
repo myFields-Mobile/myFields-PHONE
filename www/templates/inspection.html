@@ -1,0 +1,30 @@
+<ion-view view-title="Inspection Information">
+  <ion-content>
+
+    <!-- Begin Map -->
+    <div class="card">
+      <div class="item item-divider" style="text-transform:uppercase;">
+        Field: {{inspection.Field.name}}
+      </div>
+      <div class="item item-text-wrap">
+        <div id="field-map" data-tap-disabled="true"
+          style="width:100%; height:300px;"></div>
+      </div>
+    </div>
+    <!-- End Map -->
+    <!-- Begin Grower Information -->
+    <div class="card">
+      <div class="item item-divider" style="text-transform:uppercase;">
+        Grower Information: {{inspection.User.firstName}} {{inspection.User.lastName}}
+      </div>
+      <div class="item item-text-wrap">
+        <p>Firstname: {{inspection.User.firstName}}</p>
+        <p>Lastname: {{inspection.User.lastName}}</p>
+        <p>Phone: {{inspection.User.phone}}</p>
+        <button class="button button-block button-positive" ng-click="callNumber(inspection.User.phone)" style="text-transform:uppercase;">
+          Call Grower
+        </button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
